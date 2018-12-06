@@ -16,8 +16,7 @@ class BTMain
 		
 		while(foundChar == false)
 		{
-			//System.out.println(bt.checkLeft(currentNode)); 
-
+			
 			if(bt.checkLeft(currentNode) == false && bt.checkRight(currentNode) == false)
 			{
 				System.out.println("You were thinking of " + bt.toString(currentNode));
@@ -34,7 +33,9 @@ class BTMain
 
 					System.out.println("Enter a yes/no question distinguishing your character");
 					newQuestion = user.nextLine(); 
-					bt.setData(currentNode, newQuestion); 
+					bt.setData(currentNode, newQuestion);
+
+					currentNode = 0;  
 				}
 				else if(input.equals("yes") || input.equals("Yes"))
 				{
@@ -47,11 +48,10 @@ class BTMain
 			}
 			else
 			{
-				//System.out.println("I am here");
 				System.out.println(bt.toString(currentNode)); 
 				input = user.nextLine();
 
-				if(input.equals("no") || input.equals("No"))
+				if(input.equals("no") || input.equals("No")) 
 				{
 					move = bt.moveRight(currentNode);
 
